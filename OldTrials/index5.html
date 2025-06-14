@@ -133,15 +133,10 @@
 
         /* Contact Cards */
         .contact-card {
-            align-items: center;
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
             cursor: pointer;
-            height: 100%; /* Make cards fill their container height */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; /* Distribute content evenly */
         }
 
         .contact-card:hover {
@@ -160,24 +155,14 @@
         }
 
         .contact-action {
-            text-align: center;
-            justify-content: center;
-            width: 50% !important;
             transition: all 0.3s ease;
-            border-radius: 8px !important; /* Rounded corners instead of pill */
-            padding: 12px 24px !important; /* More compact padding */
-            font-size: 0.9rem;
-            font-weight: 500;
-            min-width: auto;
-            width: auto;
-            display: inline-flex !important;
         }
 
         .contact-action:hover {
             transform: translateY(-2px);
         }
 
-        /* Enhanced Modal Styles - FIXED VERSION */
+        /* Enhanced Modal Styles */
         .modal-dialog-custom {
             transition: all 0.3s ease;
         }
@@ -199,25 +184,14 @@
             height: auto !important;
         }
 
-        /* FIX: Constrain modal-left to prevent overflow */
-        .modal-left {
-            flex: 1 1 0 !important; /* Allow it to grow but start from 0 base */
-            min-width: 0 !important; /* Allow shrinking below content width */
-            max-width: calc(100% - 400px) !important; /* Ensure text area stays visible */
-            display: flex !important;
-            flex-direction: column !important;
-        }
-
         .modal-left-portrait {
             flex: 0 0 65% !important;
             max-height: calc(100vh - 8rem) !important;
-            max-width: 65% !important; /* Add explicit max-width */
         }
 
         .modal-image-container {
             min-height: 400px;
             background: #f8f9fa;
-            flex: 1 1 auto; /* Allow to grow and shrink */
         }
 
         .modal-body-portrait .modal-image-container {
@@ -265,16 +239,10 @@
             font-weight: 500;
         }
 
-        /* FIX: Gallery Styles - Prevent width overflow */
+        /* Gallery Styles */
         .modal-gallery {
             scrollbar-width: thin;
             scrollbar-color: #ccc #f8f9fa;
-            flex: 0 0 auto !important; /* Don't grow or shrink */
-            min-width: 0 !important; /* Allow content to shrink */
-            width: 100% !important; /* Take full width of parent */
-            overflow-x: auto !important; /* Horizontal scroll only */
-            overflow-y: hidden !important;
-            white-space: nowrap !important; /* Prevent wrapping */
         }
 
         .modal-gallery::-webkit-scrollbar {
@@ -294,19 +262,14 @@
             background: #999;
         }
 
-        /* FIX: Gallery thumbnails - Prevent expansion */
         .gallery-thumb {
-            width: 80px !important;
-            height: 60px !important;
-            min-width: 80px !important; /* Prevent shrinking */
+            width: 80px;
+            height: 60px;
             object-fit: cover;
             cursor: pointer;
             transition: all 0.3s ease;
             opacity: 0.7;
             border: 2px solid transparent;
-            flex-shrink: 0 !important; /* Prevent thumbnails from shrinking */
-            display: inline-block !important; /* Ensure they stay in line */
-            margin-right: 8px; /* Replace gap with margin */
         }
 
         .gallery-thumb:hover,
@@ -316,17 +279,9 @@
             border-color: var(--accent-color);
         }
 
-        /* FIX: Modal right side - Maintain fixed width */
-        .modal-right {
-            flex: 0 0 400px !important; /* Fixed width, don't grow or shrink */
-            min-width: 400px !important; /* Ensure minimum width */
-            max-width: 400px !important; /* Ensure maximum width */
-        }
-
         .modal-right-portrait {
             flex: 0 0 35% !important;
             max-height: calc(100vh - 4rem) !important;
-            min-width: 300px !important; /* Minimum width for portrait mode */
         }
 
         .modal-title-portrait {
@@ -394,30 +349,6 @@
                 width: calc(100vw - 2rem) !important;
             }
 
-            /* Stack vertically on mobile */
-            .modal-body {
-                flex-direction: column !important;
-            }
-
-            .modal-left {
-                max-width: 100% !important;
-                flex: 1 1 auto !important;
-            }
-
-            .modal-right {
-                flex: 0 0 auto !important;
-                min-width: auto !important;
-                max-width: 100% !important;
-                width: 100% !important;
-            }
-
-            .modal-left-portrait,
-            .modal-right-portrait {
-                flex: 1 1 auto !important;
-                max-width: 100% !important;
-                min-width: auto !important;
-            }
-
             .image-nav {
                 width: 40px;
                 height: 40px;
@@ -430,12 +361,6 @@
 
             .image-nav.next {
                 right: 10px;
-            }
-
-            .gallery-thumb {
-                width: 60px !important;
-                height: 45px !important;
-                min-width: 60px !important;
             }
         }
     </style>
@@ -523,7 +448,7 @@
                             mind, feel free to share the details—I'd love to learn more
                         </p>
                         <a href="mailto:raniaessamgad@gmail.com"
-                           class="contact-action d-inline-flex align-items-center gap-2 px-4 py-2 bg-dark text-white text-decoration-none fw-medium">
+                           class="contact-action d-inline-flex align-items-center gap-2 px-4 py-2 bg-dark text-white text-decoration-none rounded-pill fw-medium">
                             <i class="fas fa-paper-plane"></i>
                             <span>Send Email</span>
                         </a>
@@ -541,7 +466,7 @@
                             meaningful conversations, networking, and collaboration—feel free to send a message.
                         </p>
                         <a href="https://www.linkedin.com/in/raniaessam/" target="_blank" rel="noopener noreferrer"
-                           class="contact-action d-inline-flex align-items-center gap-2 px-4 py-2 bg-dark text-white text-decoration-none fw-medium">
+                           class="contact-action d-inline-flex align-items-center gap-2 px-4 py-2 bg-dark text-white text-decoration-none rounded-pill fw-medium">
                             <i class="fas fa-external-link-alt"></i>
                             <span>View Profile</span>
                         </a>
@@ -566,8 +491,7 @@
                 ></button>
             </div>
             <div class="modal-body pb-3 d-flex position-relative overflow-hidden" style="min-height: 80vh;">
-                <!-- FIXED: Removed flex-fill class and changed to use new CSS structure -->
-                <div class="modal-left d-flex flex-column position-relative bg-light">
+                <div class="modal-left flex-fill d-flex flex-column position-relative bg-light">
                     <div class="modal-image-container flex-fill d-flex align-items-center justify-content-center position-relative">
                         <img id="modalMainImage" class="modal-main-image d-block" src="" alt=""/>
 
@@ -588,15 +512,13 @@
                         </div>
                     </div>
 
-                    <!-- FIXED: Removed d-flex gap-2 and flex-shrink-0, using new CSS-controlled layout -->
-                    <div class="modal-gallery p-3 bg-light overflow-auto" id="modalGallery"
+                    <div class="modal-gallery d-flex gap-2 p-3 bg-light overflow-auto flex-shrink-0" id="modalGallery"
                          style="max-height: 100px;">
                         <!-- Gallery thumbnails will be populated here -->
                     </div>
                 </div>
-                <!-- FIXED: Removed flex classes, now controlled by CSS -->
                 <div class="modal-right bg-white p-4 d-flex flex-column justify-content-start overflow-auto"
-                     style="max-height: calc(100vh - 2rem);">
+                     style="flex: 0 0 400px; max-height: calc(100vh - 2rem);">
                     <h3 id="modalTitle" class="modal-title fs-3 fw-semibold text-dark mb-2"
                         style="letter-spacing: -0.5px;"></h3>
                     <p id="modalCategory" class="modal-category text-uppercase fw-medium mb-4"
@@ -918,7 +840,7 @@
         gallery.innerHTML = currentProject.gallery
             .map(
                 (img, index) =>
-                    `<img src="${img}" alt="${currentProject.title}" class="gallery-thumb rounded ${
+                    `<img src="${img}" alt="${currentProject.title}" class="gallery-thumb rounded flex-shrink-0 ${
                         index === 0 ? "active" : ""
                     }" onclick="setMainImage(${index})">`
             )
